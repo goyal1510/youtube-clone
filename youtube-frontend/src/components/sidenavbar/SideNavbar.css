@@ -16,6 +16,9 @@
     background-color: black;
     color: white;
 }
+.home-sideNavbar-hide{
+    display: none;
+}
 .home_sideNavbarTop{
     display: flex;
     flex-direction: column;

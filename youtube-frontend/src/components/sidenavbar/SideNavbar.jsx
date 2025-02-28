@@ -10,9 +10,9 @@ import SmartDisplayOutlinedIcon from '@mui/icons-material/SmartDisplayOutlined';
 import WatchLaterOutlinedIcon from '@mui/icons-material/WatchLaterOutlined';
 import ThumbUpAltOutlinedIcon from '@mui/icons-material/ThumbUpAltOutlined';
 import ContentCutIcon from '@mui/icons-material/ContentCut';
-const SideNavbar = () => {
+const SideNavbar = ({sideNavBar}) => {
   return (
-    <div className="home-sideNavbar">
+    <div className={sideNavBar?"home-sideNavbar":"home-sideNavbar-hide"}>
       <div className="home_sideNavbarTop">
         <div className={`home_sideNavbarTopOption`} >
           <HomeIcon />

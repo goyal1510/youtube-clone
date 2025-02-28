@@ -9,17 +9,20 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import PersonIcon from '@mui/icons-material/Person';
 import { useState } from "react";
 
-const Navbar = () => {
+const Navbar = ({setSideNavBarFunc,sideNavBar}) => {
   const [userPic,setUserPic] = useState("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfwM2108oL7bhv9Ee8QQBC2dCng0jnV0kAow&s");
   const [navbarModal,setNavbarModal] = useState(false);
   const handleClickModal =()=>{
     setNavbarModal(prev=>!prev);
   }
+  const setSideNavBar =()=>{
+    setSideNavBarFunc(!sideNavBar);
+  }
   return (
     <div className="navbar">
       <div className="navbar-left">
         <div className="menuHamberger">
-          <MenuIcon sx={{ color: "white" }} />
+          <MenuIcon sx={{ color: "white",cursor: "pointer" }} onClick={setSideNavBar}/>
         </div>
         <div className="navbar_youtubeImg">
           <YouTubeIcon sx={{ fontSize: "34px" }} className='navbar_youtubeImage' />
