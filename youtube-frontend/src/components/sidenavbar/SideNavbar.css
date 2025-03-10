@@ -1,4 +1,4 @@
-.home-sideNavbar::-webkit-scrollbar {
+/* .home-sideNavbar::-webkit-scrollbar {
     width: 12px;
 }
 .home-sideNavbar{
@@ -54,4 +54,99 @@
     width: 25px;
     height: 25px;
     border-radius: 50%;
+} */
+
+/* Scrollbar Customization */
+.home-sideNavbar::-webkit-scrollbar {
+    width: 8px;
+}
+
+
+/* Sidebar Container */
+.home-sideNavbar {
+    display: flex;
+    flex-direction: column;
+    flex: 0.16;
+    height: 92vh;
+    overflow-y: auto;
+    position: fixed;
+    top: 55px;
+    left: 0;
+    width: 275px;
+    padding: 12px;
+    background-color: #000000;
+    color: white;
+    box-sizing: border-box;
+}
+
+/* Hidden Sidebar */
+.home-sideNavbar-hide {
+    display: none;
+}
+
+/* Sidebar Section Styles */
+.home_sideNavbarTop,
+.home_sideNavbarMiddle,
+.home-sideNavbarBottom {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #3d3d3d;
+}
+
+/* Sidebar Option Styling */
+.home_sideNavbarTopOption {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.home_sideNavbarTopOption:hover {
+    background-color: #282828;
+}
+
+.home_sideNavbarTopOptionTitle {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Header Titles */
+.home_sideNavbarTopOptionTitleHeader {
+    font-weight: 600;
+    font-size: 16px;
+    padding: 8px 0;
+}
+
+/* Subscription Section Styling */
+.home_sideNavbar_ImgLogo {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Minimized Sidebar Icons */
+.home_sideNavbarMinimized {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60px;
+    background-color: #000000;
+    position: fixed;
+    top: 55px;
+    left: 0;
+    height: 92vh;
+    padding-top: 10px;
+    box-sizing: border-box;
+}
+
+.home_sideNavbarMinimized .home_sideNavbarTopOption {
+    justify-content: center;
+    padding: 12px 0;
+    width: 100%;
 }

@@ -6,7 +6,7 @@ const Home = ({sideNavBar}) => {
   return (
     <div className="home">
         <SideNavbar sideNavBar={sideNavBar}/>
-        <HomePage/>
+        <HomePage sideNavBar={sideNavBar}/>
     </div>
   )
 }
