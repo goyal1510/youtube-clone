@@ -17,23 +17,23 @@ const Home = ({ sidebar, search }) => {
 
     const suggestion = [
         "All",
-        "BTS",
+        "Music",
         "JavaScript",
         "Web Development",
         "React",
         "React router",
-        "Korean dramas",
+        "News",
         "Comedy",
         "Entertainment",
         "Roasts",
-        "Korean music",
-        "Korean podcast",
+        "Punjabi Music",
+        "Gaming",
         "Indian music",
         "Data Structure",
         "Backend",
         "Frontend",
         "Live",
-        "Recently uploaded",
+        "Manga",
     ];
 
     const scrollLeft = () => {
