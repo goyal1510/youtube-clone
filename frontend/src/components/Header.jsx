@@ -6,6 +6,7 @@ import { BiSolidMicrophone } from "react-icons/bi";
 import { AiOutlinePlus } from "react-icons/ai";
 import { TfiBell } from "react-icons/tfi";
 import { IoPersonCircle } from "react-icons/io5";
+import { Link, Navigate } from "react-router-dom";
 
 const Header = ({ setSidebar, setSearch }) => {
   // Local state for the input value
@@ -16,6 +17,16 @@ const Header = ({ setSidebar, setSearch }) => {
     // Update parent's search state only when form is submitted
     setSearch(input);
   };
+  function handleLogout(){
+
+  }
+  const [isDropDownOpen, setIsDropDownOpen] = useState(false);
+
+  const handDropDownToggle = () => setIsDropDownOpen(!isDropDownOpen);
+  const dropdownMenus = [
+    { label: "Profile"},
+];
+
 
   return (
     <div className="fixed top-0 bg-black z-50 text-white">
@@ -64,9 +75,21 @@ const Header = ({ setSidebar, setSearch }) => {
           <button>
             <TfiBell size={27} className="cursor-pointer hidden sm:block" />
           </button>
-          <button>
+          <button onClick={handDropDownToggle}>
             <IoPersonCircle size={35} className="cursor-pointer hidden sm:block" />
           </button>
+          {isDropDownOpen && (
+                                <div className='absolute right-0 mt-8 p-4 w-48 bg-black border border-gray-200 rounded-lg shadow-lg z-50'>
+                                    <ul className='font-medium space-y-4 p-2'>
+                                        {dropdownMenus.map((menu, index) => (
+                                            <li key={index}>
+                                                {menu.label}
+                                            </li>
+                                        ))}
+                                        <li><Link onClick={handleLogout}>Logout</Link></li>
+                                    </ul>
+                                </div>
+                            )}
         </div>
       </div>
     </div>

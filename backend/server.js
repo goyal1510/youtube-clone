@@ -5,8 +5,9 @@ import mongoose from "mongoose";
 import authRoutes from "./routes/auth.js";
 import videoRoutes from "./routes/videoRoutes.js";
 import commentRoutes from "./routes/comments.js";
-import path from "path";
+import path from "path"
 import { fileURLToPath } from "url";
+// import channelRoutes from "./routes/channelRoutes.js";
 
 dotenv.config();
 
@@ -23,11 +24,11 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use("/api/auth", authRoutes);
 app.use("/api/videos", videoRoutes);
 app.use("/api/comments", commentRoutes);
+// app.use("/api/channels", channelRoutes);
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => console.log("✅ MongoDB Connected"))
-    .catch(err => console.error("❌ MongoDB Error:", err));
+mongoose.connect(process.env.MONGO_URI)
+    .then(() => console.log(" MongoDB Connected"))
+    .catch(err => console.error("MongoDB Error:", err));
 
-// Export the app for Vercel
-export default app;
+app.listen(process.env.PORT, () => console.log(`🚀 Server running on port ${process.env.PORT}`));

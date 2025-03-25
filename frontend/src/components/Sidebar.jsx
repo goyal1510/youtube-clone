@@ -24,12 +24,15 @@ const Sidebar = ({sidebar}) => {
     const handleChannel = () => {
       navigate("/my-channel"); // Navigate to the Owner's Channel
     };
+    const handleHome =()=>{
+      navigate("/");
+    }
 
   return (
     <div>{sidebar &&(
         <div className={`flex flex-col z-30 justify-between pt-4 pb-2 w-full sm:w-64 transform transition-transform duration-300 ease-in-out mt-2 fixed ${sidebar? "translate-x-0": "translate-x-full"}`}>
           <div className="flex flex-col bg-zinc-900 font-medium text-md -mt-5 h-screen overflow-y-auto">
-            <button className="p-4 flex gap-7 items-center cursor-pointer active:bg-zinc-800">
+            <button className="p-4 flex gap-7 items-center cursor-pointer active:bg-zinc-800" onClick={handleHome}>
               <SlHome size={22} /> Home
             </button>
             <button className="p-4 flex gap-7 items-center cursor-pointer active:bg-zinc-800">
